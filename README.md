@@ -46,9 +46,9 @@ Added support for setting default number of characters per player per Rockstar l
 - Add the following code to your server.cfg/resouces.cfg
 ```
 ensure qb-core
-ensure qb-multicharacter
-ensure qb-spawn
+ensure arslan-multicharacter
+ensure arslan-spawn
+ensure arslan-appearence
 ensure qb-apartments
-ensure qb-clothing
 ensure qb-weathersync
 ```
