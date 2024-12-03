@@ -30,7 +30,7 @@ Added support for setting default number of characters per player per Rockstar l
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [arslan-spawn]() - Spawn selector
 - [qb-apartments](https://github.com/qbcore-framework/qb-apartments) - For giving the player a apartment after creating a character.
-- [arslan-clothing]() - For the character creation and saving outfits.
+- [arslan-appearence]() - For the character creation and saving outfits.
 - [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - For adjusting the weather while player is creating a character.
 
 ## Video
