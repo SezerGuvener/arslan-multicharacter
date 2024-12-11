@@ -32,7 +32,7 @@ Multi Character Feature for QB-Core Framework :people_holding_hands:
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [arslan-spawn](https://github.com/SezerGuvener/arslan-spawn) - Spawn selector
 - [qb-apartments](https://github.com/qbcore-framework/qb-apartments) - For giving the player a apartment after creating a character.
-- [arslan-appearence](https://github.com/SezerGuvener/arslan-appearence) - For the character creation and saving outfits.
+- [illenium-appearance](https://github.com/SezerGuvener/illenium-appearance) - For the character creation and saving outfits.
 - [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - For adjusting the weather while player is creating a character.
 
 ## Features
