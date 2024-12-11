@@ -203,18 +203,18 @@ RegisterNUICallback('selectCharacter', function(data, cb)
     cb("ok")
 end)
 
-RegisterNUICallback('cDataPed', function(data)
-    local cData = data.cData  
+RegisterNUICallback('cDataPed', function(nData, cb)
+    local cData = nData.cData
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(data, gender)
-            model = gender
-            if model ~= nil then
-                Citizen.CreateThread(function()
+        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(skinData)
+            if skinData then
+                local model = joaat(skinData.model)
+                CreateThread(function()
                     RequestModel(model)
                     while not HasModelLoaded(model) do
-                        Citizen.Wait(0)
+                        Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -222,19 +222,18 @@ RegisterNUICallback('cDataPed', function(data)
                     SetEntityInvincible(charPed, true)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
-                    data = json.decode(data)
-                    exports['fivem-appearance']:setPedAppearance(charPed, data)
+                    exports['illenium-appearance']:setPedAppearance(charPed, skinData)
                 end)
             else
-                Citizen.CreateThread(function()
+                CreateThread(function()
                     local randommodels = {
                         "mp_m_freemode_01",
                         "mp_f_freemode_01",
                     }
-                    local model = GetHashKey(randommodels[math.random(1, #randommodels)])
+                    model = joaat(randommodels[math.random(1, #randommodels)])
                     RequestModel(model)
                     while not HasModelLoaded(model) do
-                        Citizen.Wait(0)
+                        Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -244,17 +243,18 @@ RegisterNUICallback('cDataPed', function(data)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
                 end)
             end
+            cb("ok")
         end, cData.citizenid)
     else
-        Citizen.CreateThread(function()
+        CreateThread(function()
             local randommodels = {
                 "mp_m_freemode_01",
                 "mp_f_freemode_01",
             }
-            local model = GetHashKey(randommodels[math.random(1, #randommodels)])
+            local model = joaat(randommodels[math.random(1, #randommodels)])
             RequestModel(model)
             while not HasModelLoaded(model) do
-                Citizen.Wait(0)
+                Wait(0)
             end
             charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
             SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -263,6 +263,7 @@ RegisterNUICallback('cDataPed', function(data)
             PlaceObjectOnGroundProperly(charPed)
             SetBlockingOfNonTemporaryEvents(charPed, true)
         end)
+        cb("ok")
     end
 end)
 
