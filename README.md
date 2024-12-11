@@ -47,7 +47,7 @@ Multi Character Feature for QB-Core Framework :people_holding_hands:
 ensure qb-core
 ensure arslan-multicharacter
 ensure arslan-spawn
-ensure arslan-appearence
+ensure illenium-appearance
 ensure qb-apartments
 ensure qb-weathersync
 ```
