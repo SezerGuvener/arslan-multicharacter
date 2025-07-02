@@ -1,9 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'Qaisenix'
+author 'Kakarot, Qaisenix'
 description 'Allows players to create multiple characters'
-version '1.0.0'
+version '1.2.1'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
@@ -30,7 +30,10 @@ files {
     'html/reset.css',
     'html/vue.js',
     'html/swal2.js',
-    'html/profanity.js'
+    'html/profanity.js',
+    'html/translations.js',
+    'html/validation.js',
+    'html/app.js'
 }
 
 dependencies {
